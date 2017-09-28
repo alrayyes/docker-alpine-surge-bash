@@ -1,0 +1,9 @@
+services:
+  - docker
+
+install:
+  - docker build -t surge .
+  - docker run -d --name surge surge
+
+script:
+- docker ps | grep -q surge
